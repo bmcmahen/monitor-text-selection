@@ -9,7 +9,19 @@
 
     $ component install bmcmahen/monitor-text-selection
 
-## API
+## Example
+
+```javascript
+var el = document.querySelector('#text');
+var monitor = require('monitor-text-selection')(el);
+monitor.on('selected', function(e, el){
+  console.log('selected');
+});
+
+monitor.on('deselected', function(e, el){
+  console.log('deselected');
+});
+```
 
 
 
