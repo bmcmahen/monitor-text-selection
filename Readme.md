@@ -21,6 +21,9 @@ monitor.on('selected', function(e, el){
 monitor.on('deselected', function(e, el){
   console.log('deselected');
 });
+
+// unbind 
+monitor.unbind();
 ```
 
 
