@@ -22,6 +22,10 @@ monitor.on('deselected', function(e, el){
   console.log('deselected');
 });
 
+setTimeout(function(){
+  monitor.unbind();
+}, 5000);
+
 </script>
 </body>
 </html>

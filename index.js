@@ -4,12 +4,21 @@ var deselected = require('on-deselect');
 
 module.exports = function(el){
   var emitter = new Emitter();
-  selected(el, function(e){
+  var unbindSelect, unbindDeselect;
+
+  unbindSelect = selected(el, function(e){
     emitter.emit('selected', e, el);
-    deselected(el, function(e){
+    unbindDeselect = deselected(el, function(e){
       emitter.emit('deselected', e, el);
+      unbindDeselect();
     });
   });
+
+  emitter.unbind = function(){
+    if (unbindSelect) unbindSelect();
+    if (unbindDeselect) unbindDeselect();
+  }
+
   return emitter;
 };
 
