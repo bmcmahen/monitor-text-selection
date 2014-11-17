@@ -1,0 +1,30 @@
+{
+  "name": "monitor-text-selection",
+  "version": "1.0.0",
+  "description": "emit event for the selection and deselection of text for any given element'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmcmahen/monitor-text-selection.git"
+  },
+  "keywords": [
+    "selection",
+    "range",
+    "emitter",
+    "browser"
+  ],
+  "author": "Ben McMahen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmcmahen/monitor-text-selection/issues"
+  },
+  "homepage": "https://github.com/bmcmahen/monitor-text-selection",
+  "dependencies": {
+    "component-emitter": "^1.1.3",
+    "on-deselect": "^1.0.0",
+    "on-select": "^1.0.0"
+  }
+}

@@ -1,6 +1,20 @@
-var Emitter = require('emitter');
+var Emitter;
+
+try {
+  Emitter = require('component-emitter');
+} catch(err) {
+  Emitter = require('emitter');
+}
+
 var selected = require('on-select');
 var deselected = require('on-deselect');
+
+/**
+ * Monitor Text Selection
+ *
+ * @param  {Element} el
+ * @return {Emitter}
+ */
 
 module.exports = function(el){
   var emitter = new Emitter();
@@ -20,9 +34,7 @@ module.exports = function(el){
   emitter.unbind = function(){
     if (unbindSelect) unbindSelect();
     if (unbindDeselect) unbindDeselect();
-  }
+  };
 
   return emitter;
 };
-
-
